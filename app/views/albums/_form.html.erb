@@ -1,0 +1,19 @@
+<div class = "container">
+  <%= simple_form_for(@album) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.select :artist_id, @artists.collect {|artist| [artist.name]} %>
+      <%= f.input :album_name %>
+      <%= f.input :year %>
+      <% f.association :user %>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-success btn-sm">
+        <%= f.button :submit %>
+      </button>
+    </div>
+  <% end %>
+</div>
