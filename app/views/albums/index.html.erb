@@ -7,7 +7,6 @@
     <div class="col-md-6 col-sm-6 col-xs-12 form-inputs mb-2 radius-15" >
       <thead>
         <tr>
-          <th>Artist</th>
           <th>Album name</th>
           <th>Year</th>
           <th>User</th>
@@ -18,7 +17,7 @@
       <tbody>
         <% @albums.each do |album| %>
           <tr>
-            <td><%= album.artists %></td>
+
             <td><%= album.album_name %></td>
             <td><%= album.year %></td>
             <td><%= album.user.username %></td>
@@ -41,6 +40,6 @@
 
   <br>
   <button type="button" class="btn btn-outline-primary"><%= link_to 'New Album', new_album_path %></button>
-
+  <button type="button" class="btn btn-dark"><%= link_to 'Back', artists_path %></button>
   <%= render 'shared/flashes'%>
 </div>
