@@ -10,5 +10,5 @@ require "faker"
 puts "Creating Artists names"
 
 50.times do
-  Artist.create name: Faker::Name.name
+  Artist.create!(name: Faker::Artist.name)
 end

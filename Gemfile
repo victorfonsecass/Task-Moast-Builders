@@ -30,8 +30,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Authentication
 gem 'devise'
 gem 'rails_admin', '~> 2.0'
-# fake names
-gem 'faker'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
@@ -65,3 +63,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# fake names
+gem 'faker'

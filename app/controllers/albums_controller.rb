@@ -4,7 +4,6 @@ class AlbumsController < ApplicationController
   # GET /albums
   def index
     @albums = Album.includes(:user) # aumentando a velocidade de uma querry no sql
-
   end
 
   # GET
@@ -26,7 +25,6 @@ class AlbumsController < ApplicationController
 
   # POST
   def create
-
     @album = Album.new(album_params)
     @album.user = current_user
     if @album.save
