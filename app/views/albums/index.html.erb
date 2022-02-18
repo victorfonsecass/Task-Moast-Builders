@@ -1,38 +1,46 @@
 <div class = "container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1>Albums</h1>
+  <h1>Albums</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Artist</th>
-      <th>Album name</th>
-      <th>Year</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <table>
+    <div class="col-md-6 col-sm-6 col-xs-12 form-inputs mb-2 radius-15" >
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Album name</th>
+          <th>Year</th>
+          <th>User</th>
+          <th colspan="6"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.artists %></td>
-        <td><%= album.album_name %></td>
-        <td><%= album.year %></td>
-        <td><%= album.user.username %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <% if  current_user.admin %>
-          <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tbody>
+        <% @albums.each do |album| %>
+          <tr>
+            <td><%= album.artists %></td>
+            <td><%= album.album_name %></td>
+            <td><%= album.year %></td>
+            <td><%= album.user.username %></td>
+            <td>
+              <button type="button" class="btn btn-success"><%= link_to 'Show', album %></button>
+            </td>
+            <td>
+            <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_album_path(album) %></button>
+            </td>
+            <% if  current_user.admin %>
+              <td>
+              <button type="button" class="btn btn-danger"><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              </td>
+            <% end %>
+          </tr>
         <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </div>
+  </table>
 
-<br>
+  <br>
+  <button type="button" class="btn btn-outline-primary"><%= link_to 'New Album', new_album_path %></button>
 
-<%= link_to 'New Album', new_album_path %>
-<%= render 'shared/flashes'%>
+  <%= render 'shared/flashes'%>
 </div>

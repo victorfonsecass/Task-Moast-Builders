@@ -4,10 +4,12 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.select :artist_id, @artists.collect {|artist| [artist.name]} %>
-      <%= f.input :album_name %>
-      <%= f.input :year %>
-      <% f.association :user %>
+      <div class="col-md-6 col-sm-6 col-xs-12 form-inputs mb-2 radius-15" >
+        <%= f.select :artist_id, @artists.collect {|artist| [artist.name]} %>
+        <%= f.input :album_name %>
+        <%= f.input :year %>
+        <% f.association :user %>
+      </div>
     </div>
 
     <div class="form-actions">
