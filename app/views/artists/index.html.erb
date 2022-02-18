@@ -1,9 +1,12 @@
-<div class ='container '>
+<div class ='container'>
   <tbody>
-      <% @artists.each do |artist| %>
-        <tr>
-          <li><%= artist.name %></li>
-        </tr>
-      <% end %>
+    <%= link_to 'Create your album', albums_path, class: "btn btn-outline-dark btn-sm radius-15" %>
+
+    <% @artists.each do |artist| %>
+      <ul>
+        <li><%= artist.name %></li>
+      </ul>
+    <% end %>
+
   </tbody>
 </div>
