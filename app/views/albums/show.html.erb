@@ -1,24 +1,22 @@
 <div class="container">
 
+  <p>
+    <strong>Artist:</strong>
+    <%= @artist.name %>
+  </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @artist.name %>
-</p>
+  <p>
+    <strong>Album name:</strong>
+    <%= @album.album_name %>
+  </p>
 
-<p>
-  <strong>Album name:</strong>
-  <%= @album.album_name %>
-</p>
+  <p>
+    <strong>Year:</strong>
+    <%= @album.year %>
+  </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @album.year %>
-</p>
+  <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_album_path(@album) %></button>
+  <button type="button" class="btn btn-dark"><%= link_to 'Back', albums_path %></button>
 
-
-
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
-<%= render 'shared/flashes'%>
+  <%= render 'shared/flashes'%>
 </div>

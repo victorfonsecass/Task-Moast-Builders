@@ -1,3 +1,4 @@
+
 class AlbumsController < ApplicationController
     before_action :set_album, only: %i[ show edit update destroy]
 
@@ -21,6 +22,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    @artist = Artist.all
   end
 
   # POST
@@ -39,7 +41,7 @@ class AlbumsController < ApplicationController
       if @album.update(album_params)
         redirect_to @album, notice: 'Album was successfully dupdated'
       else
-        remder :edit
+        render :edit
       end
     else
       redirect_to @album, notice: 'Action Forbidden'
