@@ -1,7 +1,25 @@
 <div class="container">
 <h1>Editing Album</h1>
 
-<%= render 'form', album: @album %>
+ <%= simple_form_for(@album) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <div class="col-md-6 col-sm-6 col-xs-12 form-inputs mb-2 radius-15" >
+
+        <%= f.input :album_name %>
+        <%= f.input :year %>
+        <% f.association :user %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn btn-success btn-sm">
+        <%= f.button :submit %>
+      </button>
+    </div>
+  <% end %>
 
 <%= link_to 'Show', @album %> |
 <%= link_to 'Back', albums_path %>
