@@ -7,20 +7,19 @@
     <div class="col-md-6 col-sm-6 col-xs-12 form-inputs mb-2 radius-15" >
       <thead>
         <tr>
-          <th>Artist</th>
           <th>Album name</th>
           <th>Year</th>
           <th>Created by</th>
-          <th colspan="6"></th>
+
         </tr>
       </thead>
 
       <tbody>
         <% @albums.each do |album| %>
           <tr>
-            <td><%= album.artist_id %></td>
+
             <td><%= album.album_name %></td>
-            <td><%= album.year %></td>
+            <td ><%= album.year %></td>
             <td><%= album.user.username %></td>
             <td>
               <button type="button" class="btn btn-success"><%= link_to 'Show', album %></button>

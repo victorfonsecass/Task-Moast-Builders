@@ -5,6 +5,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   def index
     @albums = Album.includes(:user) # aumentando a velocidade de uma querry no sql
+
   end
 
   # GET
@@ -29,6 +30,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user = current_user
+   # @album.artist = Artists.select(params[:name])
     if @album.save
       redirect_to @album
     else
