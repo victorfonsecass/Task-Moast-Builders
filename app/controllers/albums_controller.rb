@@ -50,7 +50,7 @@ class AlbumsController < ApplicationController
 
   # DELETE
   def destroy
-    if where_modification?
+    if current_user.admin
       @album.destroy
       redirect_to albums_url, notice: 'Album was successfully destroyed'
     else
